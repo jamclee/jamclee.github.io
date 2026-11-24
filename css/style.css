@@ -408,3 +408,32 @@ main:has(.cv_frame) { max-width: 1000px; }
     .cv_frame { display: none; }
     .cv_fallback { display: block; }
 }
+
+/* ---------- Beyond Research: group photos ---------- */
+
+.photo_row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+.photo_row img,
+.photo_placeholder {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 6px;
+}
+.photo_row img { display: block; object-fit: cover; }
+.photo_placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--tint);
+    border: 2px dashed #b8c4d2;
+    color: var(--muted);
+    font-size: 0.9em;
+}
+
+@media (min-width: 600px) {
+    .photo_row { grid-template-columns: 1fr 1fr; }
+}
